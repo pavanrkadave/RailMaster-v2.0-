@@ -22,13 +22,13 @@
 
   <style type="text/css">
     body {
-    background-image: url("https://bennettfeely.com/gradients/img/gradient_24.png");
+    background-image: url(img/gdnt.png);
     -webkit-background-size: cover;
          -moz-background-size: cover;
          -o-background-size: cover;
          background-size: cover;
-    }
-  </style>
+  }
+  </style> 
 
   <body>
 

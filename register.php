@@ -12,7 +12,9 @@
  $query = "INSERT INTO user(userid, name, email,address,phone,password) VALUES ('".$userid."', '".$name."','".$email."','".$address."','".$phone."',md5('".$password."'))"; 
  if(mysqli_query($conn, $query)) 
  { 
- echo '<p style="color:green;">Data Inserted Successfully..</p>'; 
+ echo '<br/><div class="alert alert-success" role="alert">
+  <strong>Successfully Registered!</strong> Login To Get Started.
+</div>'; 
  } 
  else
  {

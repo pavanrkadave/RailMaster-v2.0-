@@ -23,6 +23,16 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
  </head>
 
+ <style type="text/css">
+   body {
+    background-image: url(img/gdnt.png);
+    background-size: cover;
+    -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+   }
+ </style>
+
 
  <body>
 
@@ -35,7 +45,7 @@
               <h3 class="masthead-brand text-danger">RailMaster (Beta 2.0)</h3>
               
               <nav class="nav nav-masthead">
-                <a class="nav-link text-danger" href="login_admin.php">LogOut</a>
+                <a class="nav-link text-danger" href="login_user.php">LogIn</a>
               </nav>
             </div>
           </header> 

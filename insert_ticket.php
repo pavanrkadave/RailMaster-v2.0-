@@ -4,28 +4,34 @@
  {  
       $output = '';  
       $message = '';  
-      $trainno = mysqli_real_escape_string($connect, $_POST["trainno"]);  
       $name = mysqli_real_escape_string($connect, $_POST["name"]);  
-      $type = mysqli_real_escape_string($connect, $_POST["type"]);  
-      $fromst = mysqli_real_escape_string($connect, $_POST["fromst"]);  
-      $tost = mysqli_real_escape_string($connect, $_POST["tost"]);  
+      $trainno = mysqli_real_escape_string($connect, $_POST["trainno"]);
+      $fromst = mysqli_real_escape_string($connect, $_POST["fromst"]);
+      $tost = mysqli_real_escape_string($connect, $_POST["tost"]);
+      $deptime = mysqli_real_escape_string($connect, $_POST["deptime"]);
+      $arrival = mysqli_real_escape_string($connect, $_POST["arrival"]);
+      $coach = mysqli_real_escape_string($connect, $_POST["coach"]);
+      $seat = mysqli_real_escape_string($connect, $_POST["seatno"]);    
       if($_POST["id"] != '')  
       {  
            $query = "  
-           UPDATE trains   
-           SET trainno='$trainno',   
-           name='$name',   
-           type='$type',   
-           fromst = '$fromst',   
-           tost = '$tost'   
+           UPDATE ticket   
+           SET name='$name',   
+           trainno='$trainno',
+           fromst='$fromst',
+           tost='$tost',
+           deptime='$deptime',
+           arrival='$arrival',
+           coach='$coach',
+           seatno='$seat'   
            WHERE id='".$_POST["id"]."'";  
            $message = 'Data Updated';  
       }  
       else  
       {  
            $query = "  
-           INSERT INTO trains(trainno, name, type, fromst, tost)  
-           VALUES('$trainno', '$name', '$type', '$fromst', '$tost');  
+           INSERT INTO ticket(name, trainno,fromst,tost,deptime,arrival,coach,seatno)  
+           VALUES('$name','$trainno','$fromst','$tost','$deptime','$arrival','$coach','$seat');  
            ";  
            $message = 'Data Inserted';  
       }  
@@ -37,28 +43,26 @@
            $output .= '  
                 <table class="table table-bordered">  
                      <tr>  
-                          <th>Train Number</th>
-                          <th>Train Name</th>
-                          <th>Type</th>
-                          <th>From Station</th>
-                          <th>To Station</th>  
-                          <th>Edit</th>  
-                          <th>View</th>
-                          <th>View</th>  
+                           <th>Train ID</th>   
+                            <th>Train Number</th>  
+                            <th>Name</th>  
+                            <th>Type</th>
+                            <th>From Station</th>
+                            <th>To Station</th>
+                            <th>Book Ticket</th>   
                      </tr>  
            ';  
            while($row = mysqli_fetch_array($result))  
            {  
                 $output .= '  
                      <tr>  
+                          <td>' . $row["id"] . '</td>
                           <td>' . $row["trainno"] . '</td>
                           <td>' . $row["name"] . '</td>
                           <td>' . $row["type"] . '</td>
                           <td>' . $row["fromst"] . '</td>
                           <td>' . $row["tost"] . '</td>  
-                          <td><input type="button" name="edit" value="Edit" id="'.$row["id"] .'" class="btn btn-info btn-xs edit_data" /></td>  
-                          <td><input type="button" name="view" value="view" id="' . $row["id"] . '" class="btn btn-info btn-xs view_data" /></td>
-                          <td><input type="button" name="view" value="Delete" id="' . $row["id"] . '" class="btn btn-info btn-xs delete_data" /></td>  
+                          <td><input type="button" name="edit" value="Book Ticket" id="'.$row["id"] .'" class="btn btn-info btn-xs edit_data" /></td>   
                      </tr>  
                 ';  
            }  

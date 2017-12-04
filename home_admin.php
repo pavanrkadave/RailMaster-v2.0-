@@ -21,6 +21,16 @@
     <link href="css/cover.css" rel="stylesheet">
   </head>
 
+  <style type="text/css">
+    body {
+    background-image: url(img/gdnt.png);
+    -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+         background-size: cover;
+  }
+  </style> 
+
   <body>
 
     <div class="site-wrapper">

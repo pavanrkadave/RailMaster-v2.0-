@@ -6,7 +6,7 @@
         <!--Meta Data -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-        <title>RailMaster | SearchTrains </title>
+        <title>RailMaster | SearchStatus </title>
 
         <!--Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -34,7 +34,7 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
 
-                <h3 class = "header text-danger">Search Train</h3>
+                <h3 class = "header text-danger">Search Status</h3>
                 <br/>
 
                     <div class=>
@@ -71,7 +71,7 @@
         function load_data(query)
         {
             $.ajax({
-                url: "fetchtrain.php",
+                url: "search_status.php",
                 method: "POST",
                 data: {query: query},
                 success: function (data)

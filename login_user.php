@@ -43,7 +43,7 @@ if(isset($_SESSION["username"]))
    height:270px;
   }
   body {
-    background-image: url("https://bennettfeely.com/gradients/img/gradient_24.png");
+    background-image: url(img/gdnt.png);
     -webkit-background-size: cover;
          -moz-background-size: cover;
          -o-background-size: cover;
@@ -91,6 +91,7 @@ if(isset($_SESSION["username"]))
     </div>   
     </div>
 
+    <br/><br/>
     <a href="register_user.php">Dont have an Account? Register.</a>
 
           <footer class="mastfoot">
@@ -125,8 +126,8 @@ $(document).ready(function(){
     {
      if(data)
      {
-      $("body").load("home_user.php");
-      $("title").title("RailMaster|Home User")
+      $("html").load("home_user.php");
+      $("title").title("RailMaster|Home User");
      }
      else
      {

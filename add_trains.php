@@ -1,7 +1,7 @@
 <?php
 
  $connect = mysqli_connect("localhost", "root", "", "collegedb");  
- $query = "SELECT * FROM trains ORDER BY id ASC";  
+ $query = "CALL select_trains(@p0)";  
  $result = mysqli_query($connect, $query);
    
  ?>
@@ -22,6 +22,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
          
       </head>  
+
+      <style type="text/css">
+    body {
+    background-image: url(img/gdnt.png);
+    -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+         background-size: cover;
+  }
+  </style> 
+  
       <body>  
            <div class="container" style="width:900px";>  
             <br/>
